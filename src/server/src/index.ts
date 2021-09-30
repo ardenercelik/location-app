@@ -6,6 +6,8 @@ import { locationRouter } from "./routers/locationRouter";
 import Knex from "knex";
 import { Model } from "objection";
 import knexConfig from "./knexfile";
+import fileUpload from "express-fileupload";
+import { uploadRouter } from "./routers/uploadRouter";
 const middlewares = require("./middlewares");
 require("dotenv").config();
 
@@ -24,8 +26,10 @@ const main = async () => {
       origin: "*",
     })
   );
+  app.use(fileUpload());
   app.use(express.json());
   app.use("/api", locationRouter);
+  app.use("/api/upload", uploadRouter);
   app.use(middlewares.notFoundHandler);
   app.use(middlewares.errorHandler);
 
