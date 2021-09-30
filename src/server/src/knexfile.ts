@@ -4,7 +4,7 @@ import * as knex from "knex";
 const knexConfig = {
   development: {
     client: "sqlite3",
-    connection: "./test.db",
+    connection: ":memory:",
     useNullAsDefault: true,
     migrations: {
       directory: "./db/migrations",

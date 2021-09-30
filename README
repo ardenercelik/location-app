@@ -1,0 +1,24 @@
+location app build with nodejs and react.
+to run in debug mode:  
+    for the client -> yarn start
+    server -> yarn run dev
+directory structure:
+client -> client app
+    src
+        api-> backend integration
+        components -> react ui components
+        constanst -> constants
+server -> server
+    db-> migrations and seed
+    src 
+        router -> express endpoints
+        services -> controller and repository
+        models -> knex model schema
+        middlewares -> error handling middlewares
+        index.ts -> main.app
+
+to start the application:
+    make build
+    make up
+to remove images:
+    make clean

@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  backend:
+    image: "location-api:latest"
+    container_name: location-api
+    ports:
+      - "5050:5050"
+  frontend:
+    image: "location-client:latest"
+    ports:
+      - "8087:80"
+    links:
+      - backend

@@ -12,7 +12,7 @@ uploadRouter.post("/", (req: Request, res: Response): any => {
   }
 
   const file = req.files?.file as UploadedFile;
-  const filePath: string = `${__dirname}\\..\\uploads\\${file.name}`;
+  const filePath: string = `${__dirname}/../uploads/${file.name}`;
   file.mv(filePath, (err) => {
     if (err) {
       console.log(err);
@@ -23,5 +23,5 @@ uploadRouter.post("/", (req: Request, res: Response): any => {
   });
 });
 uploadRouter.get("/:fileName", function (req: Request, res: Response) {
-  res.sendFile(path.resolve(`${__dirname}\\..\\uploads\\${req.params.fileName}`));
+  res.sendFile(path.resolve(`${__dirname}/../uploads/${req.params.fileName}`));
 });

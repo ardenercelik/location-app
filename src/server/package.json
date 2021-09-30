@@ -6,7 +6,7 @@
   "author": "Arden Erçelik",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --build",
     "watch": "tsc -w",
     "dev": "nodemon --exec ts-node src/index.ts"
   },
